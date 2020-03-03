@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/one">
+
+    <fragment
+        android:id="@+id/one"
+        android:name="com.example.koin.one"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/action_one_to_three"
+            app:destination="@id/three" />
+        <action
+            android:id="@+id/action_one_to_two"
+            app:destination="@id/two" />
+    </fragment>
+    <fragment
+        android:id="@+id/two"
+        android:name="com.example.koin.two"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" >
+        <argument
+            android:name="carData"
+            app:argType="com.example.koin.Car"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/three"
+        android:name="com.example.koin.three"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three" >
+        <argument
+            android:name="stringData"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="intData"
+            app:argType="integer" />
+    </fragment>
+</navigation>
