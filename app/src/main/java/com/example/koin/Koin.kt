@@ -1,6 +1,7 @@
 package com.example.koin
 
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 interface HelloService {
@@ -30,4 +31,6 @@ val mainVMModule = module {
 
 val mainActivityModule = module {
     viewModel { MainViewModel(get()) }
+
+    single(named("string1")) { "Day la string"}
 }
