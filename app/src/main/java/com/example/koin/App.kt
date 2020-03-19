@@ -15,6 +15,8 @@ class App: Application() {
             androidFileProperties()
             modules(arrayListOf(appModule, mainActivityModule, mainVMModule)) // khai bao nhung module su dung
 
+            //baokiinkk
+
         }
     }
 
